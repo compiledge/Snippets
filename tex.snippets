@@ -1,0 +1,72 @@
+#------------------------------------------------
+snippet art "Um artigo básico de exemplo" b
+\documentclass[10pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[portuguese]{babel}
+\usepackage[T1]{fontenc}
+\author{${1:tab:autor}}
+\title{${2:tab:titulo}}
+\begin{document}
+${3:tab:texto}
+$0
+\end{document}
+endsnippet
+
+snippet box "comment box" b
+% ----------------------------------------------
+% 					${1:title}
+% ----------------------------------------------
+$0
+endsnippet
+
+snippet ul "outline unordered list" b
+\begin{outline}
+	\1 ${1:tab:item}
+\end{outline}
+$0
+endsnippet
+
+snippet ol "outline ordered list" b
+\begin{outline}[enumerate]
+	\1 ${1:tab:item}
+\end{outline}
+$0
+endsnippet
+
+snippet lst "Ambiente lstlisting para codigos" b
+\begin{lstlisting}[language=${1:tab:linguagem}, caption=${2:tab:legenda}]
+${3:tab:codigo}
+\end{lstlisting}
+$0
+endsnippet
+
+snippet dslide "Slide de coluna dupla" b
+\begin{frame}{${1:tab:titulo}}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+	\begin{center}
+		\includegraphics[width=1.0\textwidth]{img/${2:tab:img1}}
+	\end{center}
+\end{column}
+\begin{column}{0.5\textwidth}
+	\begin{center}
+		\includegraphics[width=1.0\textwidth]{img/${3:tab:img2}}
+	\end{center}
+\end{column}
+\end{columns}
+\end{frame}
+$0
+endsnippet
+
+#------------------------------------------------
+
+#------------------------------------------------
+# call IMAP('EFE', "\\begin{frame}\<CR>\\frametitle{<++>}\<CR>\\framesubtitle{<++>}\<CR><++>\<CR>\\end{frame}<++>",'tex')
+# call IMAP('EFD', "\\begin{frame}\<CR>\\frametitle{<++>}\<CR>\\framesubtitle{<++>}\<CR><++>\<CR>\\begin{columns}\<CR>\\begin{column}[t]{.45\\textwidth}\<CR><++>\<CR>\\end{column}\<CR>\\begin{column}[t]{.45\\textwidth}\<CR><++>\<CR>\\end{column}\<CR>\\end{columns}\<CR><++>\<CR>\\end{frame}<++>",'tex')
+# call IMAP('EFB', "\\begin{frame}\<CR>\\frametitle{Bibliografia}\<CR>\\framesubtitle{Referências Bibliográficas}\<CR>\\nocite{*}\<CR>\\bibliographystyle{plainnat}\<CR>\\bibliography{bib}\<CR>\\end{frame}",'tex')
+# call IMAP('EFS', "\\begin{frame}\<CR>\\frametitle{Sumário}\<CR>\\framesubtitle{Tópicos da Aula}\<CR>\\tableofcontents\<CR>\\end{frame}<++>",'tex')
+# call IMAP('EFF', "\\begin{frame}\<CR>\\frametitle{<++>}\<CR>\\framesubtitle{<++>}\<CR>\\begin{figure}[h]\<CR>\\centering\<CR>\\includegraphics[scale=0.25]{img/<++>}\<CR>\\caption{<++>}\<CR>\\label{fig:<++>}\<CR>\\end{figure}\<CR>\\end{frame}<++>",'tex')
+# call IMAP('EFN', "\\begin{frame}\<CR>\\frametitle{That's all folks!}\<CR>\\framesubtitle{Dúvidas?} \<CR>\\begin{center}\<CR>\\textbf{Horário de atendimento:}\<CR>\\begin{table}[h]\<CR>\\begin{tabular}{ll}\<CR>\\textbf{\\insday:} & \\inshour \\\\ \<CR>\\end{tabular}\<CR>\\end{table}\<CR>\\textbf{E-mail:} \\insemail \\\\ \<CR>\\textbf{assunto:} \\insabrev \\\\ \<CR>\\end{center}\<CR>\\begin{figure}[h]\<CR>\\includegraphics[scale=0.70]{img/end.jpeg}\<CR>\\end{figure}>\<CR>\\end{frame}<++>",'tex')
+# call IMAP('EFP', "\\begin{frame}\<CR>\\frametitle{<++>}\<CR>\\framesubtitle{<++>}\<CR>\\begin{lstlisting}[language=<++>, caption=<++>]\<CR><++>\<CR>\\end{lstlisting}\<CR>\\end{frame}<++>",'tex')
+# call IMAP('ECL', "\\begin{columns}\<CR>\\begin{column}[t]{.45\\textwidth}\<CR><++>\<CR>\\end{column}\<CR>\\begin{column}[t]{.45\\textwidth}\<CR><++>\<CR>\\end{column}\<CR>\\end{columns}<++>",'tex')
+# call IMAP('EIM', "\\begin{figure}[h]\<CR>\\centering\<CR>\\includegraphics[scale=0.25]{img/<++>}\<CR>\\caption{<++>}\<CR>\\label{fig:<++>}\<CR>\\end{figure}<++>",'tex')
